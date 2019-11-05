@@ -1,12 +1,17 @@
-public class circle {
+public class Circle {
 
     private double radius;
     private String color;
 
-    public circle() {
+    public Circle() {
         radius = 1.0;
         color = "red";
     }
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
     public double getCircumference() {
         return radius+radius*Math.PI;
     }
@@ -27,7 +32,7 @@ public class circle {
 
     public static void main(String[] args) {
 
-        circle c1 = new circle();
+        Circle c1 = new Circle();
         System.out.println("The circle has radius of " + c1.getRadius() + " and them circumference of " + c1.getCircumference() + "and them area of " + c1.getArea());
     }
 }
