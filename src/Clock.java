@@ -5,13 +5,13 @@ public class Clock {
 
         public Clock(){
             hours = new NumberDisplay(24);
-            minutes = new NumberDisplay(59);
+            minutes = new NumberDisplay(60);
             updateDisplay();
         }
         public Clock(int hour, int minute) {
             hours = new NumberDisplay(24);
             hours.setValue(hour);
-            minutes = new NumberDisplay(59);
+            minutes = new NumberDisplay(60);
             minutes.setValue(minute);
             updateDisplay();
         }
@@ -29,8 +29,9 @@ public class Clock {
         }
 
         private void updateDisplay() {
-            if (minutes.getValue() == 59) {
+            if (minutes.getValue() == 60) {
                 hours.increment();
             }
+            displayString = hours.getDisplayValue() + ":" + minutes.getDisplayValue();
         }
 }

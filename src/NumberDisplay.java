@@ -12,15 +12,19 @@ public class NumberDisplay {
     }
 
     public void setValue(int newValue) {
-        this.value = newValue;
         if (newValue < limit && newValue > 0) {
-
+            this.value = newValue;
         }
     }
 
     public String getDisplayValue() {
-        String strValue = Integer.toString(value);
-        return strValue;
+        String display = null;
+        if (value > 9) {
+            display = String.valueOf(value);
+        } else if (value < 10) {
+            display = "0" + value;
+        }
+        return display;
     }
 
     public int increment() {
